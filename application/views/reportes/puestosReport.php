@@ -9,7 +9,7 @@
               <a href="<?= base_url() . "principal/" ?>">DROMOS</a>
             </li>
           </ol>
-        </div>      
+        </div>
       </header>
       <!-- End: Topbar -->
 
@@ -26,7 +26,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-              	 
+
                   	<div class="tab-content">
                   		<div class="col-md-12">
 			              <div class="panel panel-visible" id="spy5">
@@ -43,7 +43,7 @@
                               <th >Área</th>
                               <th >Dpto</th>
                               <th >Total Posiciones</th>
-                              <th >Libres</th>
+                              <th >Vacantes</th>
                               <th>Ocupadas</th>
 			                      </tr>
 			                    </thead>
@@ -134,8 +134,8 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
-  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
+  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
@@ -143,7 +143,7 @@
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
       <!-- Alerts  -->
   <script src="<?php echo base_url();?>media/assets/js/dist/bootbox.min.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/tablesReport.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/tablesReport.js"></script>
 
 
 
@@ -151,7 +151,7 @@
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
 
     InitTable("tabla","REPORTE DE PUESTOS" , "landscape");
@@ -181,6 +181,3 @@
   <!-- END: PAGE SCRIPTS -->
 </body>
 </html>
-
-
-    

@@ -10,7 +10,7 @@
             </li>
           </ol>
         </div>
-        <a class="btn btn-info pull-right" href="<?= base_url() . "principal/nuevoPuesto" ?>">Agregar Nuevo <span class="glyphicon glyphicon-book"></span></a>      
+        <a class="btn btn-info pull-right" href="<?= base_url() . "principal/nuevoPuesto" ?>">Agregar Nuevo <span class="glyphicon glyphicon-book"></span></a>
       </header>
       <!-- End: Topbar -->
 
@@ -25,7 +25,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-              	 
+
                   	<div class="tab-content">
                   		<div class="col-md-12">
 			              <div class="panel panel-visible" id="spy5">
@@ -106,8 +106,8 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
-  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
+  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
@@ -115,13 +115,13 @@
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
       <!-- Alerts  -->
   <script src="<?php echo base_url();?>media/assets/js/dist/bootbox.min.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/catalogReport.js"></script> 
-  
+  <script src="<?php echo base_url();?>media/assets/js/catalogReport.js"></script>
+
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
     var columnas = [0, 1];
     InitTable("tabla","CATALOGO DE PUESTOS" , "landscape" ,columnas);
@@ -152,8 +152,8 @@
 
 
     <script type="text/javascript">
-	 
-	    $('.eliminar').click(function(e) { 
+
+	    $('.eliminar').click(function(e) {
 	    	var OEliminar=$(this);
 	    	bootbox.confirm("<center>¿Esta seguro que desea eliminar el registro? <br></center>", function(confirmed) {
                         if(confirmed==true)
@@ -161,21 +161,21 @@
                         	id= OEliminar.data("val");
 		                     datastr = "clave=" + id ;
 		                            $.ajax({
-		                                type: "POST", 
-		                                async: false, 
+		                                type: "POST",
+		                                async: false,
 		                                url: '<?php echo base_url(); ?>principal/eliminaPuesto',
-		                                data: datastr, 
+		                                data: datastr,
 		                                dataType: "text",
 		                                cache:false,
 		                                success: function(data){
 		                                    bootbox.alert(data);
-		                                },  
+		                                },
 		                                error: function(){bootbox.alert("Error al procesar la operación");}
 		                    });
 
 		                    OEliminar.parent().parent().remove();
 						}
-           			 });       
+           			 });
         });
 
  <?php if(isset($_GET['msg'])){
@@ -186,6 +186,3 @@
 
 </body>
 </html>
-
-
-    

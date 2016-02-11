@@ -1,21 +1,21 @@
 <style type="text/css">
 
-        .activar_comentario.active {                
-            display: none;      
-        }
-
-        .activar_comentario span:nth-of-type(1)  {             
+        .activar_comentario.active {
             display: none;
         }
-        .activar_comentario span:last-child  {             
-            display: block;     
+
+        .activar_comentario span:nth-of-type(1)  {
+            display: none;
+        }
+        .activar_comentario span:last-child  {
+            display: block;
         }
 
-        .activar_comentario.active  span:nth-of-type(1)  {             
-            display: block;     
+        .activar_comentario.active  span:nth-of-type(1)  {
+            display: block;
         }
-        .activar_comentario.active span:last-child  {              
-            display: none;          
+        .activar_comentario.active span:last-child  {
+            display: none;
         }
 
     </style>
@@ -35,7 +35,7 @@
 
           </ol>
         </div>
-      
+
       </header>
       <!-- End: Topbar -->
 
@@ -51,7 +51,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-              	 
+
                   	<div class="tab-content">
                   		<div class="col-md-12">
 			              <div class="panel panel-visible" id="spy5">
@@ -59,7 +59,7 @@
 			                  <div class="panel-title hidden-xs">
 			                    <span class="glyphicon glyphicon-tasks"></span>Editar Colaborador</div>
 			                </div>
-                      
+
 			                <div class="panel-body pn">
                         <?php if(!empty($colaborador)): ?>
                         <h5 class="text-center">Actualiza la información</h5>
@@ -84,8 +84,8 @@
                                           <option selected="selected" value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado?></option>
                                           <?php else: ?>
                                           <option value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado ?></option>
-                                          <?php endif; ?>         
-                      
+                                          <?php endif; ?>
+
                                           <?php endforeach; ?>
                                       </select>
                                     </div>
@@ -103,7 +103,7 @@
                                           <?php else: ?>
                                           <option value="0">INACTIVO</option>
                                           <option selected="selected" value="1">ACTIVO</option>
-                                          <?php endif; ?>         
+                                          <?php endif; ?>
                                       </select>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <!--<div class="row">
                                 <label class="col-md-2 col-md-offset-1 control-label" for="">Apellido Paterno</label>
                                 <div class="col-xs-6">
                                     <div class="form-group">
@@ -134,7 +134,7 @@
                                       <input type="text" name="apellidoMaterno" value="<?=$colaborador->apellidoMaterno ?>" class="form-control input-sm"  required>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="row">
                               <label class="col-md-2 col-md-offset-1 control-label" for="">Sexo</label>
@@ -147,7 +147,7 @@
                                           <?php else: ?>
                                           <option value="0">FEMENINO</option>
                                           <option selected="selected" value="1">MASCULINO</option>
-                                          <?php endif; ?>         
+                                          <?php endif; ?>
                                       </select>
                                     </div>
                                 </div>
@@ -209,18 +209,23 @@
 
                             <div class="row">
                                 <label class="col-md-2 col-md-offset-1 control-label" for="">Municipio</label>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                      <input type="text" name="Municipio_idMunicipio" value="<?=$colaborador->Municipio_idMunicipio ?>" class="form-control input-sm"  required>
-                                    </div>
-                                </div>
+                                 <div class="col-xs-6 ">
+                                  <div class="form-group">
+                                        <select class="select2 form-control" name="Municipio_idMunicipio">
+                                            <option selected="selected" value="">Selecciona</option>
+                                            <?php foreach($municipios as $item): ?>
+                                            <option value="<?= $item->idMunicipio ?>"><?= $item->nombre ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                  </div>
+                                 </div>
                             </div>
 
                             <div class="row">
                                 <label class="col-md-2 col-md-offset-1 control-label" for="">Fecha Nacimiento</label>
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                      <input type="text" name="fechaNac" value="<?=$colaborador->fechaNac ?>" class="form-control input-sm"  required>
+                                      <input type="text" name="fechaNac" value="<?=$colaborador->fechaNac ?>" class="form-control input-sm datepicker"  required>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +243,7 @@
                                 <label class="col-md-2 col-md-offset-1 control-label" for="">Telefono Celular</label>
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                      <input type="text" name="TelCelular" value="<?=$colaborador->TelCelular ?>" class="form-control input-sm"  required>
+                                      <input type="text" name="TelCelular" value="<?=$colaborador->TelCelular ?>" class="form-control input-sm">
                                     </div>
                                 </div>
                             </div>
@@ -254,8 +259,8 @@
                                           <option selected="selected" value="<?= $item->idEscolaridad ?>"><?= $item->descripcion ?></option>
                                           <?php else: ?>
                                           <option value="<?= $item->idEscolaridad ?>"><?= $item->descripcion ?></option>
-                                          <?php endif; ?>         
-                      
+                                          <?php endif; ?>
+
                                           <?php endforeach; ?>
                                       </select>
                                     </div>
@@ -285,7 +290,7 @@
                                         <label id="estatus_estado2" class="activar_comentario btn btn-sm btn-danger" onclick="actualiza_estatus(1);">
                                             <input type="radio" name="options" id="option2" autocomplete="off" >
                                             <i class="fa fa-warning"></i> NO
-                                        </label>          
+                                        </label>
                                       </div>
                                     </div>
                                 </div>
@@ -309,9 +314,9 @@
                             </div>
 
 
-                            
 
-                            <input type="submit" value="Actualizar" class="btn btn-info btn-block">  
+
+                            <input type="submit" value="Actualizar" class="btn btn-info btn-block">
 
                             <div class="row">
                                 <div class="col-xs-12">
@@ -365,7 +370,7 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
 
 
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/jquery.dataTables.js"></script>
@@ -378,6 +383,9 @@
   <!-- Datatables Bootstrap Modifications  -->
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
 
+  <!-- DatePicker -->
+  <script src="<?php echo base_url();?>media/vendor/plugins/datepicker/media/js/bootstrap-datetimepicker.js"></script>
+
 
   <!-- Ajax submit forms  -->
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
@@ -389,10 +397,10 @@
   <!-- Select2 Plugin Plugin -->
   <script src="<?php echo base_url();?>media/vendor/plugins/select2/select2.min.js"></script>
 
-    <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+    <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
 
 
-  
+
   <script type="text/javascript">
 
 
@@ -403,25 +411,25 @@
         $('#inputNuevaPosicion option[value=""]').attr('selected','selected');
         $('#nuevaPosicion').addClass("hidden");
       }
-                     
+
       }
 
 
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
 
     $(".select2").select2();
     // Init plugins for ".task-widget"
-
+    $('.datepicker').datepicker();
     // Init Widget Demo JS
     // demoHighCharts.init();
 
-    // Because we are using Admin Panels we use the OnFinish 
+    // Because we are using Admin Panels we use the OnFinish
     // callback to activate the demoWidgets. It's smoother if
-    // we let the panels be moved and organized before 
+    // we let the panels be moved and organized before
     // filling them with content from various plugins
 
     // Init plugins used on this page
@@ -454,6 +462,3 @@
   </script>
 </body>
 </html>
-
-
-    

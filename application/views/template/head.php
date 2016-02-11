@@ -30,6 +30,11 @@
 
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/vendor/plugins/select2/css/core.css">
 
+  <!-- DatePicker -->
+
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/vendor/plugins/datepicker/css/bootstrap-datetimepicker.css">
+
+
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.0/css/buttons.dataTables.min.css">
@@ -50,18 +55,18 @@
   <!-- Start: Main -->
   <div id="main">
 
-    <!-- 
-       ".navbar" Helper Classes: 
-       * Positioning Classes: 
+    <!--
+       ".navbar" Helper Classes:
+       * Positioning Classes:
         '.navbar-static-top' - Static top positioned navbar
         '.navbar-static-top' - Fixed top positioned navbar
 
        * Available Skin Classes:
-         .bg-dark    .bg-primary   .bg-success   
+         .bg-dark    .bg-primary   .bg-success
          .bg-info    .bg-warning   .bg-danger
-         .bg-alert   .bg-system 
+         .bg-alert   .bg-system
       Example: <header class="navbar navbar-fixed-top bg-primary">
-      Results: Fixed top navbar with blue background 
+      Results: Fixed top navbar with blue background
        -->
     <header class="navbar navbar-fixed-top navbar-shadow bg-system">
       <div class="navbar-branding">
@@ -79,7 +84,7 @@
               <span class="fa fa-bell-o fs14 va-m"></span>
               <span class="badge badge-danger">9</span>
             </button>
-            <div class="dropdown-menu dropdown-persist w350 animated animated-shorter fadeIn" role="menu">  
+            <div class="dropdown-menu dropdown-persist w350 animated animated-shorter fadeIn" role="menu">
               <div class="panel mbn">
                   <div class="panel-menu">
                      <span class="panel-icon"><i class="fa fa-clock-o"></i></span>
@@ -179,7 +184,7 @@
                           <div class="timeline-date">3:05am</div>
                         </li>
                       </ol>
-       
+
                   </div>
                   <div class="panel-footer text-center p7">
                     <a href="#" class="link-unstyled"> View All </a>
@@ -188,7 +193,7 @@
             </div>
           </div>
         </li>
-     
+
         <li class="menu-divider hidden-xs">
           <i class="fa fa-circle"></i>
         </li>
@@ -201,7 +206,7 @@
           </a>
           <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
             <li class="dropdown-header clearfix">
-              
+
             </li>
             <li class="list-group-item">
               <a href="#" class="animated animated-short fadeInUp">
@@ -223,24 +228,24 @@
             </li>
           </ul>
         </li>
-        <?php endif; ?> 
+        <?php endif; ?>
       </ul>
     </header>
     <!-- End: Header -->
 
-    <!-- 
-       "#sidebar_left" Helper Classes: 
-       * Positioning Classes: 
-        '.affix' - Sets Sidebar Left to the fixed position 
+    <!--
+       "#sidebar_left" Helper Classes:
+       * Positioning Classes:
+        '.affix' - Sets Sidebar Left to the fixed position
 
        * Available Skin Classes:
          .sidebar-dark (default no class needed)
-         .sidebar-light  
-         .sidebar-light.light   
+         .sidebar-light
+         .sidebar-light.light
 
        Example: <aside id="sidebar_left" class="affix sidebar-light">
        Results: Fixed Left Sidebar with light/white background
-    
+
 
         Start: Sidebar -->
     <aside id="sidebar_left" class="nano nano-light affix">
@@ -497,10 +502,14 @@
                 <a href="<?=base_url() . "reportes/regimen" ?>">
                   <span class="glyphicon glyphicon-equalizer"></span>Régimen</a>
               </li>
-             
+              <li>
+                <a href="<?=base_url() . "reportes/plantillaGeneral" ?>">
+                  <span class="glyphicon glyphicon-equalizer"></span>Plantilla General</a>
+              </li>
+
             </ul>
           </li>
-     
+
         </ul>
         <!-- End: Sidebar Menu -->
 
@@ -520,5 +529,3 @@
 
     <!-- Start: Content-Wrapper -->
     <section id="content_wrapper">
-
-    

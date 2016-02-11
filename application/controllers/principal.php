@@ -464,7 +464,7 @@ class Principal extends CI_Controller
 		$data["posicion"] =  $this->Dromos_model->get_posicion($idPosicion);
 		$data["posicion"]  = $data["posicion"][0];
 		//Todos los objetos que necesita para los select del formulario
-		$data["colaboradores"] =  $this->Dromos_model->get_Colaboradores();
+		$data["colaboradores"] =  $this->Dromos_model->get_free_colaboradores();
 		$data["puestos"] =  $this->Dromos_model->get_Puestos();
 		$data["departamentos"] =  $this->Dromos_model->get_Departamentos();
 		$data["turnos"] =  $this->Dromos_model->get_Turnos();
@@ -522,6 +522,13 @@ class Principal extends CI_Controller
 
 	}
 
+	public function clavePuesto(){
+		if(!$this->session->userdata("user_logeado")) redirect("principal/login");
+		$data["puesto"] = $this->Dromos_model->clavePuesto($this->input->post('clave'));
+		//$data["puesto"]=$data["puesto"][0];
+		echo json_encode($data["puesto"]);
+	}
+
 	// ***********************************Colaborador CATALOGO ***********************************************
 	public function colaboradores()
 	{
@@ -543,6 +550,7 @@ class Principal extends CI_Controller
 		$data["colaboradores"] =  $this->Dromos_model->get_ColaboradoresDetalle();
 		$data["escolaridades"] = $this->Dromos_model->get_Escolaridades();
 		$data["freePosiciones"] = $this->Dromos_model->get_Pos_disponibles();
+		$data["municipios"] = $this->Dromos_model->get_Municipios();
 		$this->load->view("template", $data);
 	}
 

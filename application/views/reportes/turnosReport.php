@@ -9,7 +9,7 @@
               <a href="<?= base_url() . "principal/" ?>">DROMOS</a>
             </li>
           </ol>
-        </div>      
+        </div>
       </header>
       <!-- End: Topbar -->
 
@@ -26,7 +26,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-                 
+
                     <div class="tab-content">
                       <div class="col-md-12">
                     <div class="panel panel-visible" id="spy5">
@@ -42,10 +42,12 @@
                               <th>#Colaborador</th>
                               <th>Nombre</th>
                               <th>Puesto</th>
-                              <th>Ubicación</th>
-                             
-                              <th>Regimen</th>
                               <th>Clave Posición</th>
+                              <th>Departamento</th>
+                              <th>Área</th>
+                              <th>Ubicación</th>
+                              <th>Regimen</th>
+
                             </tr>
                           </thead>
                           <tbody >
@@ -56,9 +58,11 @@
                                     <td><?= $item->numEmpleado ?></td>
                                     <td><?= $item->colaborador ?></td>
                                     <td><?= $item->puesto ?></td>
+                                    <td><?= $item->clave_posicion ?></td>
+                                    <td><?= $item->departamento ?></td>
+                                    <td><?= $item->area ?></td>
                                     <td><?= $item->ubicacion ?></td>
                                     <td><?= $item->regimen ?></td>
-                                    <td><?= $item->clave_posicion ?></td>
                                   </tr>
                                   <?php endforeach; ?>
                              <?php endif; ?>
@@ -115,8 +119,8 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
-  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
+  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
@@ -124,13 +128,13 @@
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
       <!-- Alerts  -->
   <script src="<?php echo base_url();?>media/assets/js/dist/bootbox.min.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/tablesReport.js"></script> 
-  
+  <script src="<?php echo base_url();?>media/assets/js/tablesReport.js"></script>
+
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
     InitTable("tabla","REPORTE DE TURNOS" , "landscape");
 
@@ -160,6 +164,3 @@
 
 </body>
 </html>
-
-
-    

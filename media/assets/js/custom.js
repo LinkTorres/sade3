@@ -203,13 +203,14 @@ $(document).ready(function() {
                 	$('.dt-panelfooter').removeClass("hidden");
                 	for (var i = 0; i < arrayLength; i++) {
 					   $('#tablaAltasReport').find('.tbody').append( "<tr> \
+						  <td>"+arr[i].Colaborador_numEmpleado+"</td> \
+							<td>"+arr[i].nombre+"</td> \
+					   	<td>"+arr[i].clavePosicion+"</td> \
+					   	<td>"+arr[i].fechaAlta+"</td> \
 					   	<td>"+arr[i].regimen+"</td> \
 					   	<td>"+arr[i].turno+"</td>   \
 					   	<td>"+arr[i].ubicacion+"</td> \
-					   	<td>"+arr[i].clavePosicion+"</td> \
-					   	<td>"+arr[i].fechaAlta+"</td> \
 					   	<td>"+arr[i].puesto_nombre+"</td> \
-					   	<td>"+arr[i].Colaborador_numEmpleado+"</td> \
 					   	<td>"+arr[i].sueldoMensual+"</td> \
 					   	</tr>" );
 					}
@@ -268,13 +269,13 @@ $(document).ready(function() {
                 	//console.log(arr);
                 	for (var i = 0; i < arrayLength; i++) {
 					   $('#tablaBajasReport').find('.tbody').append( "<tr> \
+             <td>"+arr[i].Colaborador_numEmpleado+"</td> \
+             <td>"+arr[i].clavePosicion+"</td> \
+             <td>"+arr[i].fechaBaja+"</td> \
 					   	<td>"+arr[i].regimen+"</td> \
 					   	<td>"+arr[i].turno+"</td>   \
 					   	<td>"+arr[i].ubicacion+"</td> \
-					   	<td>"+arr[i].clavePosicion+"</td> \
-					   	<td>"+arr[i].fechaBaja+"</td> \
 					   	<td>"+arr[i].puesto_nombre+"</td> \
-					   	<td>"+arr[i].Colaborador_numEmpleado+"</td> \
 					   	<td>"+arr[i].sueldoMensual+"</td> \
 					   	</tr>" );
 					}

@@ -39,14 +39,15 @@
 			                  <table class="text-center table table-striped table-hover display" id="tabla" cellspacing="0" width="100%">
 			                    <thead >
 			                      <tr>
-			                        <th >ID</th>
+                              <th >Numero</th>
+                              <th >Nombre</th>
                               <th >Clave</th>
                               <th >Puesto</th>
                               <th >Dpto</th>
                               <th >Turno</th>
                               <th >Regimen</th>
-                              <th >Empleado</th>
                               <th >Ubicación</th>
+                              <th >Sueldo Mensual</th>
 			                        <th class="text-center">Editar</th>
 			                        <th class="text-center">Eliminar</th>
 			                      </tr>
@@ -55,14 +56,15 @@
 			                    	<?php if(!empty($posiciones)): ?>
 			                    	<?php foreach ($posiciones as $item):?>
 			                    	<tr>
-			                    		<td><?= $item->idPosicion ?></td>
+			                    		<td><?= $item->Colaborador_numEmpleado1 ?></td>
+                              <th ><?= $item->NColaborador ?></th>
                               <td><?= $item->clave_posicion ?></td>
                               <td><?= $item->NPuesto ?></td>
                               <td><?= $item->NDepartamento ?></td>
                               <td><?= $item->NTurno ?></td>
                               <td><?= $item->NRegimen ?></td>
-                              <th ><?= $item->Colaborador_numEmpleado1 ?></th>
                               <td><?= $item->NUbicacion ?></td>
+                              <td><?= $item->sueldoMensual ?></td>
 			                    		<td><a class="btn btn-info btn-md" href="<?php echo base_url() . "principal/editarPosicion/" . $item->idPosicion?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 			                    		<td><button class="eliminar btn btn-danger btn-md" data-val="<?=$item->idPosicion ?>"><span class="glyphicon glyphicon-trash"></span></button></td>
 			                    	</tr>

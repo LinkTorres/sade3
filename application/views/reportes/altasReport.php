@@ -9,7 +9,7 @@
               <a href="<?= base_url() . "principal/" ?>">DROMOS</a>
             </li>
           </ol>
-        </div>      
+        </div>
       </header>
       <!-- End: Topbar -->
 
@@ -26,7 +26,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-              	 
+
                   	<div class="tab-content">
                   		<div class="col-md-12">
 			              <div class="panel panel-visible" id="spy5">
@@ -45,8 +45,6 @@
                                           <option selected="selected" value="">Selecciona</option>
                                           <option value="2015">2015</option>
                                           <option value="2016">2016</option>
-                                          <option value="2017">2017</option>
-                                          <option value="2018">2018</option>
                                       </select>
                                     </div>
                                 </div>
@@ -66,32 +64,34 @@
                                 </div>
                             </div>
 
-                            <input type="submit" value="Aceptar" class="btn btn-info btn-block">  
+                            <input type="submit" value="Aceptar" class="btn btn-info btn-block">
 
                             <div class="row">
                               <div class="col-xs-10 col-xs-offset-1">
                                   <table class="hidden text-center table table-striped table-hover display" id="tablaAltasReport" cellspacing="0" width="100%">
                                     <thead >
                                       <tr>
+                                           <th>Num Empleado  </th>
+                                           <th>Nombre</th>
+                                           <th>ClavePosición </th>
+                                           <th >Fecha Alta </th>
                                         <th >Regimen</th>
                                         <th >Turno</th>
                                         <th >Ubicacion</th>
-                                        <th >ClavePosición</th>
-                                        <th >Fecha Alta</th>
                                         <th >Puesto</th>
-                                        <th>Num Empleado</th>
+
                                         <th>Sueldo Mensual</th>
                                       </tr>
                                     </thead>
                                     <tbody class="tbody">
-                                          
+
                                     </tbody>
                                   </table>
                                 </div>
                             </div>
 
-                             
-      
+
+
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div id="responseReporte" class="alert text-center hidden"></div>
@@ -154,7 +154,7 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
@@ -162,15 +162,15 @@
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
       <!-- Alerts  -->
   <script src="<?php echo base_url();?>media/assets/js/dist/bootbox.min.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/tablesReport.js"></script> 
-  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/tablesReport.js"></script>
+  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
 
-  
+
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
     //InitTable("tablaAltasReport","REPORTE DE PUESTOS" , "landscape");
 
@@ -199,6 +199,3 @@
 
 </body>
 </html>
-
-
-    

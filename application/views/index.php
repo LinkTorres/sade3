@@ -36,29 +36,31 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
 
    <!-- Datatables -->
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/jquery.dataTables.js"></script>
+  <!-- DatePicker -->
+  <script src="<?php echo base_url();?>media/vendor/plugins/datepicker/media/js/bootstrap-datetimepicker.js"></script>
 
   <!-- Datatables Tabletools addon -->
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
 
-  
+
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
     // Init plugins for ".task-widget"
 
     // Init Widget Demo JS
     // demoHighCharts.init();
 
-    // Because we are using Admin Panels we use the OnFinish 
+    // Because we are using Admin Panels we use the OnFinish
     // callback to activate the demoWidgets. It's smoother if
-    // we let the panels be moved and organized before 
+    // we let the panels be moved and organized before
     // filling them with content from various plugins
 
     // Init plugins used on this page
@@ -90,6 +92,3 @@
   <!-- END: PAGE SCRIPTS -->
 </body>
 </html>
-
-
-    

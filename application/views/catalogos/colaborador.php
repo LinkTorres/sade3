@@ -13,7 +13,7 @@
         </div>
       <a class="btn btn-info pull-right" href="<?= base_url() . "principal/nuevoColaborador" ?>">Agregar Nuevo <span class="glyphicon glyphicon-book"></span></a>
 
-      
+
       </header>
       <!-- End: Topbar -->
 
@@ -28,7 +28,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-              	 
+
                   	<div class="tab-content">
                   		<div class="col-md-12">
 			              <div class="panel panel-visible" id="spy5">
@@ -41,14 +41,14 @@
 			                    <thead >
 			                      <tr>
 			                        <th >No.</th>
-                              <th >Nombre</th>
-                              <th >Apellidos</th>
+                              <th >Nombre </th>
+                              <th> Puesto </th>
+                              <th> Sueldo </th>
                               <th >CURP</th>
                               <th >NSS</th>
                               <th >Posicion</th>
                               <th >Dpto</th>
                               <th >Área</th>
-                              <th >Dirección</th>
                               <th >Ubicación</th>
 			                        <th class="text-center">Editar</th>
 			                        <th class="text-center">Eliminar</th>
@@ -60,13 +60,13 @@
 			                    	<tr>
 			                    		<td><?= $item->numEmpleado ?></td>
                               <td><?= $item->nombre ?></td>
-                              <td><?= $item->apellidoPaterno . " " . $item->apellidoMaterno ?></td>
+                              <td><?= $item->NPuesto ?></td>
+                              <td><?= $item->sueldo ?></td>
                               <td><?= $item->curp ?></td>
                               <td><?= $item->NSS ?></td>
                               <td><?= $item->clave_posicion ?></td>
                               <td><?= $item->departamento ?></td>
                               <td><?= $item->area ?></td>
-                              <td><?= $item->direccion ?></td>
                               <td><?= $item->DesUbicacion ?></td>
 			                    		<td><a class="btn btn-info btn-md" href="<?php echo base_url() . "principal/editarColaborador/" . $item->numEmpleado?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 			                    		<td><button class="eliminar btn btn-danger btn-md" data-val="<?=$item->numEmpleado ?>"><span class="glyphicon glyphicon-trash"></span></button></td>
@@ -138,7 +138,7 @@
                           <option value="<?= $item->idMotivos ?>" title="<?= truncate($item->Descripcion , 50 )?>"><?= $item->Nombre ?></option>
                           <?php endforeach; ?>
                           </select>
-                    
+
                     </label>
                   </div>
                   <!-- end section -->
@@ -205,8 +205,8 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
-  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
+  <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
@@ -214,14 +214,14 @@
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
       <!-- Alerts  -->
   <script src="<?php echo base_url();?>media/assets/js/dist/bootbox.min.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/catalogReport.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/catalogReport.js"></script>
 
-  
+
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
      var columnas = [0, 1 , 3 ,4 ,5 ,6 ,7 ,8 ,9];
     InitTable("tabla","CATALOGO DE COLABORADORES" , "landscape" ,columnas);
@@ -252,7 +252,7 @@
 
 
     <script type="text/javascript">
-	    $('.eliminar').click(function(e) { 
+	    $('.eliminar').click(function(e) {
 	    	var OEliminar=$(this);
 	    	bootbox.confirm("<center>¿Esta seguro que desea eliminar el registro? <br></center>", function(confirmed) {
                         if(confirmed==true)
@@ -260,22 +260,22 @@
                         	id= OEliminar.data("val");
 		                     datastr = "numEmpleado=" + id ;
 		                            $.ajax({
-		                                type: "POST", 
-		                                async: false, 
+		                                type: "POST",
+		                                async: false,
 		                                url: '<?php echo base_url(); ?>principal/eliminaColaborador',
-		                                data: datastr, 
+		                                data: datastr,
 		                                dataType: "text",
 		                                cache:false,
 		                                success: function(data){
 		                                    bootbox.alert(data, function() {
                                           $('#Colaborador_numEmpleado').val(id);
-                                         // Inline Admin-Form example 
+                                         // Inline Admin-Form example
                                           $.magnificPopup.open({
                                             removalDelay: 500, //delay removal by X to allow out-animation,
                                             items: {
-                                              src: "#motivosForm" 
+                                              src: "#motivosForm"
                                             },
-                                            // overflowY: 'hidden', // 
+                                            // overflowY: 'hidden', //
                                             callbacks: {
                                               beforeOpen: function(e) {
                                                 var Animation = "mfp-fullscale";
@@ -285,13 +285,13 @@
                                             midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
                                           });
                                         });
-		                                },  
+		                                },
 		                                error: function(){bootbox.alert("Error al procesar la operación");}
 		                    });
 
 		                    OEliminar.parent().parent().remove();
 						}
-           			 });       
+           			 });
         });
 
  <?php if(isset($_GET['msg'])){
@@ -302,6 +302,3 @@
 
 </body>
 </html>
-
-
-    

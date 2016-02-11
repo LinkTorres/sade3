@@ -1,21 +1,21 @@
 <style type="text/css">
 
-        .activar_comentario.active {                
-            display: none;      
-        }
-
-        .activar_comentario span:nth-of-type(1)  {             
+        .activar_comentario.active {
             display: none;
         }
-        .activar_comentario span:last-child  {             
-            display: block;     
+
+        .activar_comentario span:nth-of-type(1)  {
+            display: none;
+        }
+        .activar_comentario span:last-child  {
+            display: block;
         }
 
-        .activar_comentario.active  span:nth-of-type(1)  {             
-            display: block;     
+        .activar_comentario.active  span:nth-of-type(1)  {
+            display: block;
         }
-        .activar_comentario.active span:last-child  {              
-            display: none;          
+        .activar_comentario.active span:last-child  {
+            display: none;
         }
 
     </style>
@@ -35,7 +35,7 @@
 
           </ol>
         </div>
-      
+
       </header>
       <!-- End: Topbar -->
 
@@ -51,7 +51,7 @@
               <!-- Three Pane Widget -->
               <div class="col-md-12 admin-grid">
 
-              	 
+
                   	<div class="tab-content">
                   		<div class="col-md-12">
 			              <div class="panel panel-visible" id="spy5">
@@ -59,7 +59,7 @@
 			                  <div class="panel-title hidden-xs">
 			                    <span class="glyphicon glyphicon-tasks"></span>Agregar Colaborador</div>
 			                </div>
-                      
+
 			                <div class="panel-body pn">
                         <h5 class="text-center">Ingresa la información</h5>
 			                  <form id="agregarForm" data-parsley-validate action="<?php echo base_url();?>principal/SAddColaborador" method="post" role="form">
@@ -89,7 +89,7 @@
                                       <select class="select2 form-control" name="jefeNumEmpleado">
                                           <option selected="selected" value="">Selecciona</option>
                                           <?php foreach($colaboradores as $item): ?>
-                                          <option value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado ?></option>
+                                          <option value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado . " " . $item->nombre ?></option>
                                           <?php endforeach; ?>
                                       </select>
                                     </div>
@@ -222,7 +222,7 @@
                                 <label class="col-md-2 col-md-offset-1 control-label" for="">Fecha Nacimiento</label>
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                      <input type="text" name="fechaNac" value="" class="form-control input-sm"  >
+                                      <input type="text" name="fechaNac" value="" class="form-control input-sm datepicker" data-date-format="yyyy-mm-dd" >
                                     </div>
                                 </div>
                             </div>
@@ -275,8 +275,8 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <input type="submit" value="Aceptar" class="btn btn-info btn-block">  
+
+                            <input type="submit" value="Aceptar" class="btn btn-info btn-block">
 
                             <div class="row">
                                 <div class="col-xs-12">
@@ -327,7 +327,7 @@
   <script src="<?php echo base_url();?>media/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
   <!-- Theme Javascript -->
   <script src="<?php echo base_url();?>media/assets/js/utility/utility.js"></script>
-  <script src="<?php echo base_url();?>media/assets/js/main.js"></script> 
+  <script src="<?php echo base_url();?>media/assets/js/main.js"></script>
 
 
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/jquery.dataTables.js"></script>
@@ -340,6 +340,8 @@
   <!-- Datatables Bootstrap Modifications  -->
   <script src="<?php echo base_url();?>media/vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
 
+  <!-- DatePicker -->
+  <script src="<?php echo base_url();?>media/vendor/plugins/datepicker/media/js/bootstrap-datetimepicker.js"></script>
 
   <!-- Ajax submit forms  -->
   <script src="<?php echo base_url();?>media/assets/js/jquery.form.min.js"></script>
@@ -350,25 +352,25 @@
   <!-- Select2 Plugin Plugin -->
   <script src="<?php echo base_url();?>media/vendor/plugins/select2/select2.min.js"></script>
 
-    <script src="<?php echo base_url();?>media/assets/js/custom.js"></script> 
+    <script src="<?php echo base_url();?>media/assets/js/custom.js"></script>
 
 
-  
+
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
     $(".select2").select2();
     // Init plugins for ".task-widget"
-
+    $('.datepicker').datepicker();
     // Init Widget Demo JS
     // demoHighCharts.init();
 
-    // Because we are using Admin Panels we use the OnFinish 
+    // Because we are using Admin Panels we use the OnFinish
     // callback to activate the demoWidgets. It's smoother if
-    // we let the panels be moved and organized before 
+    // we let the panels be moved and organized before
     // filling them with content from various plugins
 
     // Init plugins used on this page
@@ -399,6 +401,3 @@
   </script>
 </body>
 </html>
-
-
-    

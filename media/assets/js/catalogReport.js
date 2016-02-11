@@ -1,5 +1,6 @@
  'use strict';
-var InitTable = function(nombre_tabla, nombre_reporte, orientacion , columnas) {  
+var InitTable = function(nombre_tabla, nombre_reporte, orientacion , columnas)
+{
 
  $('#'+nombre_tabla+' thead th').each(function() {
         var title = $('#'+nombre_tabla+' thead th').eq($(this).index()).text();
@@ -14,10 +15,11 @@ var InitTable = function(nombre_tabla, nombre_reporte, orientacion , columnas) {
        //var columnas = [0, 1 , 2];
 
        var table5 = $("#"+nombre_tabla).DataTable( {
+           "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
         "sDom": '<"pull-right"T>lfrtip',
         dom: 'Bfrtip',
          "oLanguage": {
-          "sSearch": "Filtrar registros:", 
+          "sSearch": "Filtrar registros:",
           "sZeroRecords": "No se encontraron registros",
            "sLengthMenu": "Ver _MENU_ registros",
            "sInfoEmpty": "No se encontraron registros",
@@ -58,7 +60,7 @@ var InitTable = function(nombre_tabla, nombre_reporte, orientacion , columnas) {
                     "sButtonText": "Exportar",
                     "aButtons":    [  {
                     "sExtends": "csv",
-                    "sButtonText": "CSV",
+                    "sButtonText": "Excel",
                     "mColumns": columnas,
                     "oSelectorOpts": {
                           page: 'current'
@@ -93,7 +95,7 @@ var InitTable = function(nombre_tabla, nombre_reporte, orientacion , columnas) {
             .search(this.value)
             .draw();
         });
-      });  
+      });
 
 
 };

@@ -67,6 +67,16 @@ class Reportes extends CI_Controller
 
 	}
 
+	public function plantillaGeneral()
+	{
+		$data["content"] = "reportes/plantillaGeneralReporte";
+		$data["plantilla"] = $this->Reportes_model->describe_plantilla();
+		$data["posDes"] = $this->Reportes_model->total_desocupadas();
+		$data["posOcu"] = $this->Reportes_model->total_ocupadas();
+		$data["posTot"] = $this->Reportes_model->total_posiciones();
+		$this->load->view("template", $data);
+	}
+
 	public function filtroAltas(){
 		$altas = $this->Reportes_model->describe_altas($this->input->post());
 		echo json_encode($altas);
@@ -85,6 +95,6 @@ class Reportes extends CI_Controller
 
 		}
 
-		
+
 
 }

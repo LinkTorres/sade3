@@ -51,41 +51,6 @@
                                                                   </div>
 
                                                                   <div class="row">
-                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">Clave</label>
-                                                                        <div class="col-xs-6">
-                                                                              <div class="form-group">
-                                                                                    <input type="text" name="clave_posicion" value="<?=$posicion->clave_posicion ?>" class="form-control input-sm"  required>
-                                                                              </div>
-                                                                        </div>
-                                                                  </div>
-<!--
-                                                                  <div class="row">
-                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">ColaboradorNum</label>
-                                                                        <div class="col-xs-6">
-                                                                              <div class="form-group">
-                                                                                    <input type="text" name="Colaborador_numEmpleado" value="<?=$posicion->Colaborador_numEmpleado ?>" class="form-control input-sm"  required>
-                                                                              </div>
-                                                                        </div>
-                                                                  </div>-->
-                                                                  <div class="row">
-                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">Sueldo Diario</label>
-                                                                        <div class="col-xs-6">
-                                                                              <div class="form-group">
-                                                                                    <input type="text" name="sueldoDiario" value="<?=$posicion->sueldoDiario ?>" class="form-control input-sm"  required>
-                                                                              </div>
-                                                                        </div>
-                                                                  </div>
-
-                                                                  <div class="row">
-                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">Sueldo Mensual</label>
-                                                                        <div class="col-xs-6">
-                                                                              <div class="form-group">
-                                                                                    <input type="text" name="sueldoMensual" value="<?=$posicion->sueldoMensual ?>" class="form-control input-sm"  required>
-                                                                              </div>
-                                                                        </div>
-                                                                  </div>
-
-                                                                  <div class="row">
                                                                         <label class="col-md-2 col-md-offset-1 control-label" for="">Puesto</label>
                                                                         <div class="col-xs-6 ">
                                                                               <div class="form-group">
@@ -104,6 +69,46 @@
                                                                         </div>
 
                                                                   </div>
+
+                                                                  <div class="row">
+                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">Clave</label>
+                                                                        <div class="col-xs-6">
+                                                                              <div class="form-group">
+                                                                                    <input type="text" name="clave_posicion" value="<?=$posicion->clave_posicion ?>" class="form-control input-sm"  required>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+<!--
+                                                                  <div class="row">
+                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">ColaboradorNum</label>
+                                                                        <div class="col-xs-6">
+                                                                              <div class="form-group">
+                                                                                    <input type="text" name="Colaborador_numEmpleado" value="<?=$posicion->Colaborador_numEmpleado ?>" class="form-control input-sm"  required>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>-->
+
+
+
+                                                                  <div class="row">
+                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">Sueldo Diario</label>
+                                                                        <div class="col-xs-6">
+                                                                              <div class="form-group">
+                                                                                    <input type="text" name="sueldoDiario" value="<?=$posicion->sueldoDiario ?>" class="form-control input-sm"  required>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+
+                                                                  <div class="row">
+                                                                        <label class="col-md-2 col-md-offset-1 control-label" for="">Sueldo Mensual</label>
+                                                                        <div class="col-xs-6">
+                                                                              <div class="form-group">
+                                                                                    <input type="text" name="sueldoMensual" value="<?=$posicion->sueldoMensual ?>" class="form-control input-sm"  required>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+
+
 
                                                                   <div class="row">
                                                                         <label class="col-md-2 col-md-offset-1 control-label" for="">Departamento</label>
@@ -191,9 +196,9 @@
                                                                                           <option value="">Selecciona</option>
                                                                                           <?php foreach($colaboradores as $item): ?>
                                                                                                 <?php if( ($item->numEmpleado) == ($posicion->Colaborador_numEmpleado1 ) ) : ?>
-                                                                                                      <option selected="selected" value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado ?> / <?= $item->nombre ?></option>
+                                                                                                      <option selected="selected" value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado ?>  <?= $item->nombre ?></option>
                                                                                                 <?php else: ?>
-                                                                                                      <option value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado ?></option>
+                                                                                                      <option value="<?= $item->numEmpleado ?>"><?= $item->numEmpleado ?> <?= $item->nombre ?></option>
                                                                                                 <?php endif; ?>
 
                                                                                           <?php endforeach; ?>
